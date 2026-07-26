@@ -22,7 +22,7 @@ public class Line extends FOMCItem {
         super(type, Constant.valueOfId(nbtCompound.getString("rarity").orElse("")));
         this.name = nbtCompound.getString("name").orElse("");
         this.customModelData = customModelData;
-        this.water = Constant.valueOfId(nbtCompound.getString("water").orElse(""));
+        this.water = Constant.valueOfId(nbtCompound.getString("water").orElse("global"));
         NbtList nbtList = nbtCompound.getList("base").orElse(new NbtList());
         List<NbtCompound> nbtCompoundList = new ArrayList<>();
         for (int i = 0; i < nbtList.size(); i++) {
