@@ -34,6 +34,10 @@ nul
 
 run/
 
+# tools (keep the generators, ignore generated previews)
+
+tools/*.png
+
 # java
 
 hs_err_*.log

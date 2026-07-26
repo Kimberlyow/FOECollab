@@ -14,16 +14,25 @@
     "BossBarHudMixin",
     "ChatScreenAccessor",
     "ChatScreenMixin",
+    "ClientCommonNetworkHandlerMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "ClientWorldMixin",
+    "DrawContextMixin",
     "EntityMixin",
+    "ExperienceBarMixin",
+    "GameOptionsMixin",
     "HandledScreenAccessor",
     "HandledScreenMixin",
     "InGameHudAccessor",
     "InGameHudMixin",
     "KeyBindingAccessor",
+    "MouseMixin",
+    "NbtComponentAccessor",
     "PlayerListHudAccessor",
     "PlayerListHudMixin",
     "RecipeBookScreenAccessor",
-    "TextFieldWidgetMixin",
-    "ReconfiguringMixin"
+    "ReconfiguringMixin",
+    "SoundManagerMixin",
+    "TextFieldWidgetMixin"
   ]
 }

@@ -1,0 +1,25 @@
+{"providers":[
+    {"type":"bitmap","file":"foecollab:font/tag/owner.png","ascent":7,"height":7,"chars":["\uF021"]},
+    {"type":"bitmap","file":"foecollab:font/tag/admin.png","ascent":7,"height":7,"chars":["\uF022"]},
+    {"type":"bitmap","file":"foecollab:font/tag/manager.png","ascent":7,"height":7,"chars":["\uF023"]},
+    {"type":"bitmap","file":"foecollab:font/tag/staff.png","ascent":7,"height":7,"chars":["\uF024"]},
+    {"type":"bitmap","file":"foecollab:font/tag/designer.png","ascent":7,"height":7,"chars":["\uF026"]},
+    {"type":"bitmap","file":"foecollab:font/tag/builder.png","ascent":7,"height":7,"chars":["\uF027"]},
+    {"type":"bitmap","file":"foecollab:font/tag/admiral.png","ascent":7,"height":7,"chars":["\uF028"]},
+    {"type":"bitmap","file":"foecollab:font/tag/captain.png","ascent":7,"height":7,"chars":["\uF029"]},
+    {"type":"bitmap","file":"foecollab:font/tag/mariner.png","ascent":7,"height":7,"chars":["\uF030"]},
+    {"type":"bitmap","file":"foecollab:font/tag/sailor.png","ascent":7,"height":7,"chars":["\uF031"]},
+    {"type":"bitmap","file":"foecollab:font/tag/angler.png","ascent":7,"height":7,"chars":["\uF032"]},
+    {"type":"bitmap","file":"foecollab:font/tag/media.png","ascent":7,"height":7,"chars":["\uF066"]},
+    {"type":"bitmap","file":"foecollab:font/tag/communitymanager.png","ascent":7,"height":7,"chars":["\uF088"]},
+    {"type":"bitmap","file":"foecollab:font/tag/common.png","ascent":7,"height":7,"chars":["\uF033"]},
+    {"type":"bitmap","file":"foecollab:font/tag/rare.png","ascent":7,"height":7,"chars":["\uF034"]},
+    {"type":"bitmap","file":"foecollab:font/tag/epic.png","ascent":7,"height":7,"chars":["\uF035"]},
+    {"type":"bitmap","file":"foecollab:font/tag/legendary.png","ascent":7,"height":7,"chars":["\uF036"]},
+    {"type":"bitmap","file":"foecollab:font/tag/mythical.png","ascent":7,"height":7,"chars":["\uF037"]},
+    {"type":"bitmap","file":"foecollab:font/tag/special.png","ascent":7,"height":7,"chars":["\uF092"]},
+    {"type":"bitmap","file":"foecollab:font/tag/alternate.png","ascent":7,"height":7,"chars":["\uF098"]},
+    {"type":"bitmap","file":"foecollab:font/tag/spooky.png","ascent":7,"height":7,"chars":["\uF102"]},
+    {"type":"bitmap","file":"foecollab:font/tag/frozen.png","ascent":7,"height":7,"chars":["\uF179"]}
+  ]
+}

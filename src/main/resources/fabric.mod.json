@@ -10,7 +10,7 @@
 	"contact": {
 		"sources": "https://github.com/FOECollab/FOE-Collab"
 	},
-	"license": "GPL-3.0",
+	"license": "AGPL-3.0-only",
 	"icon": "assets/foecollab/icon.png",
 	"environment": "client",
 	"entrypoints": {
@@ -18,7 +18,7 @@
 			"io.github.foecollab.FOECollab"
 		],
 		"client":[
-			"io.github.foecollab.FOECollabClient"
+			"io.github.foecollab.FishOnMCExtrasClient"
 		],
 		"modmenu": [
 			"io.github.foecollab.compat.ModMenuIntegration"

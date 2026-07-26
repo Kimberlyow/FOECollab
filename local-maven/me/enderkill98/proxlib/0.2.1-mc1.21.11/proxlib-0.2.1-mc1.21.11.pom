@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>me.enderkill98</groupId>
+  <artifactId>proxlib</artifactId>
+  <version>0.2.1-mc1.21.11</version>
+  <packaging>jar</packaging>
+  <!--
+    Vendored copy of ProxLib 0.2.1 (intermediary namespace, originally maven.modrinth:proxlib:0.2.1+1.21.4)
+    with its bundled fabric.mod.json Minecraft pin relaxed from ">=1.21.3 <=1.21.4" to ">=1.21.3" so
+    Fabric Loader will load it on 1.21.11. ProxReaderMixin's targets on class_634 were verified to still
+    exist in 1.21.11. ProxLib is MIT-licensed. Used only for Jar-in-Jar bundling (include).
+  -->
+</project>

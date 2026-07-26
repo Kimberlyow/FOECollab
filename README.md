@@ -58,10 +58,22 @@ This is a collaborative project. Contributions, bug reports, and suggestions are
 
 ---
 
+## Credits
+
+Some features are ported and adapted, **with permission**, from
+[DannyPX/FishOnMC-Extras-R](https://github.com/DannyPX/FishOnMC-Extras-R) (GPL-3.0).
+See [CREDITS.md](CREDITS.md) for the full list and licensing details.
+
+---
+
 ## License
 
-This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0-only)**.
-See the LICENSE file for full terms.
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0-only)** —
+see the [LICENSE](LICENSE) file for full terms.
+
+It also includes GPL-3.0 code from FishOnMC-Extras-R; that license is included as
+[LICENSE-GPL-3.0.txt](LICENSE-GPL-3.0.txt). Combining GPL-3.0 code into this AGPL-3.0 project is
+permitted by GPL-3.0 §13 / AGPL-3.0 §13.
 
 ---
 

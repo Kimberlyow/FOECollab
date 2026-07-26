@@ -19,6 +19,10 @@ repositories {
 		name = "Modrinth"
 		url = "https://api.modrinth.com/maven"
 	}
+	maven {
+		name = "LocalVendored"
+		url = uri("${rootDir}/local-maven") // vendored, patched ProxLib (see dependencies)
+	}
 }
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -29,7 +33,13 @@ dependencies {
 	modApi "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}"
 
 	include(implementation 'com.github.CDAGaming:DiscordIPC:2c5bda3')
-	include modApi("maven.modrinth:proxlib:0.2.1+1.21.4")
+	// ProxLib has no 1.21.11 build in the intermediary/yarn namespace — 0.2.4+ ships Mojang-mapped,
+	// which can't be remapped into this yarn workspace. 0.2.1's ProxReaderMixin (it hooks
+	// ClientPlayNetworkHandler/class_634) still applies on 1.21.11 (targets verified), so we compile
+	// against the intermediary 0.2.1 artifact and bundle a vendored copy whose fabric.mod.json
+	// Minecraft pin is relaxed (">=1.21.3") so Fabric loads it on 1.21.11. See libs/.
+	modImplementation("maven.modrinth:proxlib:0.2.1+1.21.4")          // compile against intermediary 0.2.1 (yarn-remapped)
+	include("me.enderkill98:proxlib:0.2.1-mc1.21.11")                 // JiJ the vendored copy with relaxed MC pin
 }
 
 loom {
