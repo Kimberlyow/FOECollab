@@ -61,7 +61,7 @@ This is a collaborative project. Contributions, bug reports, and suggestions are
 ## Credits
 
 Some features are ported and adapted, **with permission**, from
-[DannyPX/FishOnMC-Extras-R](https://github.com/DannyPX/FishOnMC-Extras-R) (GPL-3.0).
+[FishOnExtras/FishOnMC-Extras-R](https://github.com/FishOnExtras/FishonMC-Extras-R)  (GPL-3.0).
 See [CREDITS.md](CREDITS.md) for the full list and licensing details.
 
 ---
