@@ -268,7 +268,6 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
         if(LoadingHandler.instance().isOnServer) {
             ArmorHandler.instance().appendTooltip(textList, itemStack);
             FishingStatsHandler.instance().appendTooltip(textList, itemStack);
-            AuctionHandler.instance().appendTooltip(textList, itemStack);
             // Must run last: it edits lines, which would break the fixed
             // line indices the handlers above rely on.
             TooltipShortenerHandler.instance().cleanTooltip(textList);
@@ -302,9 +301,6 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
             } else if (screen.getTitle().getString().contains("Personal Vault ")) {
                 PersonalVaultScreenHandler.instance().page = Integer.parseInt(screen.getTitle().getString().substring(screen.getTitle().getString().length() - 1));
                 PersonalVaultScreenHandler.instance().personalVaultMenuState = true;
-            } else if (Objects.equals(screen.getTitle().getString(), "Tackle Shop\uEEE7\uEEE3합")) {
-                // Tackle Shop
-                AuctionHandler.instance().tackleShopMenuState = true;
             } else if (Objects.equals(screen.getTitle().getString(), "\uEEE4할")) {
                 // Main Menu : 할
                 DailyQuestHandler.instance().questMenuState = true;
@@ -349,9 +345,6 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
                 CrewHandler.instance().onScreenClose();
             } else if(screen instanceof ChatScreen || Objects.equals(screen.getTitle().getString(), "")) {
                 ChatScreenHandler.instance().screenInit = false;
-            } else if (Objects.equals(screen.getTitle().getString(), "Tackle Shop\uEEE7\uEEE3합")) {
-                // Tackle Shop
-                AuctionHandler.instance().tackleShopMenuState = false;
             } else if (Objects.equals(screen.getTitle().getString(), "\uEEE4할")) {
                 // Main Menu : 할
                 DailyQuestHandler.instance().questMenuState = false;
