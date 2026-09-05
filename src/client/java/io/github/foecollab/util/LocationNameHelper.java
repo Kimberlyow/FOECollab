@@ -26,6 +26,7 @@ public class LocationNameHelper {
         SHORT.put("Danube River", "Danube");
         SHORT.put("Amazon River", "Amazon");
         SHORT.put("Lake Biwa", "Biwa");
+        SHORT.put("Nile River", "Nile");
         SHORT.put("Cape Cod", "Cape");
     }
 

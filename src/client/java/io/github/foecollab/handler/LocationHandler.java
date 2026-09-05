@@ -55,6 +55,7 @@ public class LocationHandler {
         else if (bossText.contains(Constant.HAWAII.TAG.getString())) return Constant.HAWAII;
         else if (bossText.contains(Constant.LOFOTEN_ISLANDS.TAG.getString())) return Constant.LOFOTEN_ISLANDS;
         else if (bossText.contains(Constant.CAIRNS.TAG.getString())) return Constant.CAIRNS;
+        else if (bossText.contains(Constant.NILE_RIVER.TAG.getString())) return Constant.NILE_RIVER;
         else return Constant.UNKNOWN;
     }
 

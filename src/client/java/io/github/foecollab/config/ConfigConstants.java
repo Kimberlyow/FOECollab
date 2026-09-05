@@ -1,7 +1,7 @@
 package io.github.foecollab.config;
 
 public class ConfigConstants {
-    public static final String MOD_VERSION = "3.0.1";
+    public static final String MOD_VERSION = "3.1.0";
     public static final String TRACKERS = "trackers";
     public static final String TOOLTIPS = "tooltips";
     public static final String OTHER = "other";

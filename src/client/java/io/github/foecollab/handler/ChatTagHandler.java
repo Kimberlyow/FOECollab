@@ -58,6 +58,7 @@ public class ChatTagHandler {
             Constant.HAWAII,
             Constant.LOFOTEN_ISLANDS,
             Constant.CAIRNS,
+            Constant.NILE_RIVER,
 
             // Variants
             Constant.NORMAL,
@@ -105,6 +106,7 @@ public class ChatTagHandler {
             Constant.DOLPHIN,
             Constant.SHEEP,
             Constant.KOALA,
+            Constant.HIPPO,
 
             // Water Types
             Constant.FRESHWATER,
@@ -131,7 +133,8 @@ public class ChatTagHandler {
             Constant.RAINFOREST,
             Constant.MEDITERRANEAN,
             Constant.OCEANIC,
-            Constant.MONSOON
+            Constant.MONSOON,
+            Constant.ARID
     };
 
     private static final Gson GSON = new Gson();

@@ -99,6 +99,11 @@ public enum ClimateConstant {
             Text.literal("o").withColor(0x7278E1),
             Text.literal("o").withColor(0x7785E2),
             Text.literal("n").withColor(0x7B93E2)), Defaults.DEFAULT_COLOR),
+    ARID("arid", TextHelper.concat(
+            Text.literal("A").withColor(0xFD3535),
+            Text.literal("r").withColor(0xE93232),
+            Text.literal("i").withColor(0xD53030),
+            Text.literal("d").withColor(0xC12D2D)), 0xC12D2D),
     DEFAULT("default", Text.empty(), Defaults.DEFAULT_COLOR)
     ;
 
