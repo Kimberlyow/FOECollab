@@ -63,6 +63,17 @@ public enum Constant {
 			Text.literal("d").withColor(0xF3F7F1),
 			Text.literal("s").withColor(0xF8F8F8)), 0xF8F8F8),
 	CAIRNS("cairns", Text.literal("Cairns").withColor(0xA1C2FB), 0xA1C2FB),
+	NILE_RIVER("nile", TextHelper.concat(
+			Text.literal("N").withColor(0xE6EFCB),
+			Text.literal("i").withColor(0xE6EFCB),
+			Text.literal("l").withColor(0xE7EDCA),
+			Text.literal("e").withColor(0xE8EBCA),
+			Text.literal(" ").withColor(0xE9E9C9),
+			Text.literal("R").withColor(0xE9E6C8),
+			Text.literal("i").withColor(0xEAE4C7),
+			Text.literal("v").withColor(0xEBE2C7),
+			Text.literal("e").withColor(0xECE0C6),
+			Text.literal("r").withColor(0xECE0C6)), 0xECE0C6),
 	CREW_ISLAND("crewisland", Text.literal("Crew Island"), Defaults.DEFAULT_COLOR),
 	UNKNOWN("unknown", Text.literal("Unknown"), Defaults.DEFAULT_COLOR),
 
@@ -332,6 +343,15 @@ public enum Constant {
 			Text.literal("a").withColor(0xB3C8CF),
 			Text.literal("l").withColor(0xB6CDCE),
 			Text.literal("a Pet").withColor(0xB8D1CD)), 0xB8D1CD),
+	HIPPO("hippo", TextHelper.concat(
+			Text.literal("H").withColor(0xA0938C),
+			Text.literal("i").withColor(0xA0938C),
+			Text.literal("p").withColor(0xA29C98),
+			Text.literal("p").withColor(0xA4A4A4),
+			Text.literal("o ").withColor(0xA4A4A4),
+			Text.literal("P").withColor(0xA4A4A4),
+			Text.literal("e").withColor(0xA4A4A4),
+			Text.literal("t").withColor(0xA4A4A4)), 0xA4A4A4),
 
 	// Water Types
 	FRESHWATER("freshwater", Text.literal("Freshwater").withColor(0x3F87EF), 0x3F87EF),
@@ -473,6 +493,11 @@ public enum Constant {
 			Text.literal("o").withColor(0x7278E1),
 			Text.literal("o").withColor(0x7785E2),
 			Text.literal("n").withColor(0x7B93E2)), 0x7B93E2),
+	ARID("arid_climate", TextHelper.concat(
+			Text.literal("A").withColor(0xFD3535),
+			Text.literal("r").withColor(0xE93232),
+			Text.literal("i").withColor(0xD53030),
+			Text.literal("d").withColor(0xC12D2D)), 0xC12D2D),
 
 	// Armor Quality
 	BROKEN("broken", Text.literal("ʙʀᴏᴋᴇɴ").withColor(0xFF74403B), 0xFF74403B),

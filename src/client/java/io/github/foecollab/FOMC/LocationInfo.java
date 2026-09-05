@@ -18,6 +18,7 @@ public enum  LocationInfo {
     HAWAII("hawaii", ClimateConstant.SAVANNA, Constant.SALTWATER),
     CAIRNS("cairns", ClimateConstant.MONSOON, Constant.SALTWATER),
     LOFOTEN_ISLANDS("lofotenislands", ClimateConstant.SUBARCTIC, Constant.SALTWATER),
+    NILE_RIVER("nile", ClimateConstant.ARID, Constant.FRESHWATER),
     DEFAULT("", ClimateConstant.DEFAULT, Constant.DEFAULT)
     ;
 
