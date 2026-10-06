@@ -97,17 +97,17 @@ public class FishingRodHandler {
         }
 
         if(this.fishingRod != null) {
-            Constant locationWater = LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER;
+            LocationInfo locationInfo = LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID);
 
             // The equipped bait/lure now lives in its own activeBait slot, not the tacklebox, so the
             // wrong-location warning reads from there. Bait sitting unequipped in the tacklebox isn't
             // what's being fished with, so it shouldn't trigger the warning (mirrors the bait HUD).
             FOMCItem activeBait = this.fishingRod.getActiveBaitItem();
             if (activeBait instanceof Bait bait && bait.water != Constant.ANY_WATER) {
-                this.isWrongBait = bait.water != locationWater;
+                this.isWrongBait = !locationInfo.hasWater(bait.water);
                 this.isWrongLure = false;
             } else if (activeBait instanceof Lure lure && lure.water != Constant.ANY_WATER) {
-                this.isWrongLure = lure.water != locationWater;
+                this.isWrongLure = !locationInfo.hasWater(lure.water);
                 this.isWrongBait = false;
             } else {
                 this.isWrongBait = false;
@@ -115,19 +115,19 @@ public class FishingRodHandler {
             }
 
             if(this.fishingRod.reel != null && this.fishingRod.reel.water != Constant.GLOBAL_WATER) {
-                this.isWrongReel = this.fishingRod.reel.water != LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER;
+                this.isWrongReel = !locationInfo.hasWater(this.fishingRod.reel.water);
             } else {
                 this.isWrongReel = false;
             }
 
             if(this.fishingRod.pole != null && this.fishingRod.pole.water != Constant.GLOBAL_WATER) {
-                this.isWrongPole = this.fishingRod.pole.water != LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER;
+                this.isWrongPole = !locationInfo.hasWater(this.fishingRod.pole.water);
             } else {
                 this.isWrongPole = false;
             }
 
             if(this.fishingRod.line != null && this.fishingRod.line.water != Constant.GLOBAL_WATER) {
-                this.isWrongLine = this.fishingRod.line.water != LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER;
+                this.isWrongLine = !locationInfo.hasWater(this.fishingRod.line.water);
             } else {
                 this.isWrongLine = false;
             }
