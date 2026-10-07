@@ -129,7 +129,7 @@ public class NotificationHudHandler {
                             Text.literal("Your ").formatted(Formatting.RED),
                             Text.literal(TextHelper.upperCaseAllFirstCharacter(bait.name)).formatted(Formatting.WHITE),
                             Text.literal(" has no use in ").formatted(Formatting.RED),
-                            LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER.TAG,
+                            LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).waterTag(),
                             Text.literal(" here").formatted(Formatting.RED),
                             Text.literal(".").formatted(Formatting.RED)
                     ));
@@ -139,7 +139,7 @@ public class NotificationHudHandler {
                             Text.literal("Your ").formatted(Formatting.RED),
                             Text.literal(TextHelper.upperCaseAllFirstCharacter(lure.name)).formatted(Formatting.WHITE),
                             Text.literal(" has no use in ").formatted(Formatting.RED),
-                            LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER.TAG,
+                            LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).waterTag(),
                             Text.literal(" here").formatted(Formatting.RED),
                             Text.literal(".").formatted(Formatting.RED)
                     ));
@@ -192,7 +192,7 @@ public class NotificationHudHandler {
                         Text.literal("Your ").formatted(Formatting.RED),
                         Text.literal(FishingRodHandler.instance().fishingRod.line.name).formatted(Formatting.WHITE),
                         Text.literal(" has no use in ").formatted(Formatting.RED),
-                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER.TAG,
+                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).waterTag(),
                         Text.literal(" here").formatted(Formatting.RED),
                         Text.literal(".").formatted(Formatting.RED)
                 ));
@@ -207,7 +207,7 @@ public class NotificationHudHandler {
                         Text.literal("Your ").formatted(Formatting.RED),
                         Text.literal(FishingRodHandler.instance().fishingRod.pole.name).formatted(Formatting.WHITE),
                         Text.literal(" has no use in ").formatted(Formatting.RED),
-                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER.TAG,
+                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).waterTag(),
                         Text.literal(" here").formatted(Formatting.RED),
                         Text.literal(".").formatted(Formatting.RED)
                 ));
@@ -222,7 +222,7 @@ public class NotificationHudHandler {
                         Text.literal("Your ").formatted(Formatting.RED),
                         Text.literal(FishingRodHandler.instance().fishingRod.reel.name).formatted(Formatting.WHITE),
                         Text.literal(" has no use in ").formatted(Formatting.RED),
-                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).WATER.TAG,
+                        LocationInfo.valueOfId(BossBarHandler.instance().currentLocation.ID).waterTag(),
                         Text.literal(" here").formatted(Formatting.RED),
                         Text.literal(".").formatted(Formatting.RED)
                 ));
