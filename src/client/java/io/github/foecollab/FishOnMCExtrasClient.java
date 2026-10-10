@@ -108,6 +108,7 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
                     StatsImportHandler.instance().tick(minecraftClient);
                     DiscordHandler.instance().tick();
                     KeybindHandler.instance().tick(minecraftClient);
+                    BaitSorterHandler.instance().tick(minecraftClient);
                     InventoryScreenHandler.instance().tick(minecraftClient);
                     PersonalVaultScreenHandler.instance().tick(minecraftClient);
                     SearchBarContainerHandler.instance().tick(minecraftClient);
@@ -142,7 +143,6 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
                         if (CONFIG.statsBackup.backupOnServerJoin) {
                             ProfileDataHandler.instance().createBackup();
                         }
-                        BaitSortingHelperHandler.instance().loadFromProfile();
                         FishCatchHandler.instance().onJoinServer();
                         CrewHandler.instance().onJoinServer();
                         DiscordHandler.instance().connect();
@@ -276,6 +276,7 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
 
     private void afterScreenInit(MinecraftClient minecraftClient, Screen screen, int scaledWidth, int scaledHeight) {
         if(LoadingHandler.instance().isOnServer) {
+            BaitSorterHandler.instance().onScreenInit(screen);
             if(Objects.equals(screen.getTitle().getString(), "Pet Menu\uEEE6\uEEE5\uEEE3핑")) {
 //                 Pet Menu핑
                 Screens.getButtons(screen).add(IconButtonWidget.builder(Text.literal("Pet Merge Calculator"), button ->

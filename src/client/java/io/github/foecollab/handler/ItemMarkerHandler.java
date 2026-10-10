@@ -282,9 +282,6 @@ public class ItemMarkerHandler {
                 }
             }
         }
-
-        // Show Bait Sorting Helper
-        BaitSortingHelperHandler.instance().renderItemMarker(drawContext, itemStack, x, y);
     }
 
     /**

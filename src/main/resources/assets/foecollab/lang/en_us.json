@@ -5,7 +5,7 @@
 
   "key.foecollab.openconfig": "Open Config",
   "key.foecollab.openextrainfo": "Show Extra Details",
-  "key.foecollab.baitsortinghelper": "Bait Sorting Helper",
+  "key.foecollab.baitsortinghelper": "Sort Baits",
   "category.foecollab.general": "FishOnMC Extras",
   "key.category.foecollab.general": "FishOnMC Extras",
 
@@ -469,8 +469,11 @@
   "text.autoconfig.foecollab.option.autoTip.disableManualTippingMsg": "Disable manual tip message",
   "text.autoconfig.foecollab.option.autoTip.disableManualTippingMsg.@Tooltip": "§7Removes the \"Want to tip...\" chat message when someone wins a reaction.",
 
-  "text.autoconfig.foecollab.option.baitSortingHelperVisibility": "§f§lBait Sorting Helper Options",
-  "text.autoconfig.foecollab.option.baitSortingHelperVisibility.showOnlyWhilePressingKeybind": "Only show while holding the keybind",
+  "text.autoconfig.foecollab.option.baitSorter": "§f§lBait Sorter Options",
+  "text.autoconfig.foecollab.option.baitSorter.sortOrder": "Sort order",
+  "text.autoconfig.foecollab.option.baitSorter.sortOrder.@Tooltip": "§7Which rarity comes first when the sort keybind is pressed in an inventory or container.",
+  "text.autoconfig.foecollab.option.baitSorter.clickSpeed": "Click speed",
+  "text.autoconfig.foecollab.option.baitSorter.clickSpeed.@Tooltip": "§7Click groups per tick, in halves.\n§e1§7 = one every 2 ticks (default), §e2§7 = one per tick, §e8§7 = four per tick.\n§cHigher is faster but sends clicks in bigger bursts.",
 
   "text.autoconfig.foecollab.option.statsBackup": "§f§lStats Backup Options",
   "text.autoconfig.foecollab.option.statsBackup.backupOnServerJoin": "Auto backup on server join",

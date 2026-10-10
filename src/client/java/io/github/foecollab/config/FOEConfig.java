@@ -163,7 +163,7 @@ public class FOEConfig implements ConfigData {
 
     @ConfigEntry.Category(value = OTHER)
     @ConfigEntry.Gui.CollapsibleObject
-    public BaitSortingHelperConfig.BaitSortingHelperVisibility baitSortingHelperVisibility = new BaitSortingHelperConfig.BaitSortingHelperVisibility();
+    public BaitSorterConfig.BaitSorter baitSorter = new BaitSorterConfig.BaitSorter();
 
     // backup stuff
     @ConfigEntry.Category(value = OTHER)
