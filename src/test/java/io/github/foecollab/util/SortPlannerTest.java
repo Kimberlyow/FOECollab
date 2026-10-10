@@ -20,7 +20,11 @@ class SortPlannerTest {
     }
 
     private static Entry lure(int slot, String name, String rarity) {
-        return new Entry(slot, "lure", name, rarity);
+        return lure(slot, name, rarity, "Bluegill", "1/4oz");
+    }
+
+    private static Entry lure(int slot, String name, String rarity, String color, String size) {
+        return new Entry(slot, "lure", name, rarity, color, size);
     }
 
     private static List<Click> picks(int... slots) {
@@ -56,8 +60,23 @@ class SortPlannerTest {
     }
 
     @Test
-    void luresNeverMerge() {
+    void luresWithSameNameColorAndSizeMerge() {
         var found = List.of(lure(9, "crankbait", "rare"), lure(10, "crankbait", "rare"));
+        assertEquals(List.of(picks(10, 9)), plan(found, true, true, false));
+    }
+
+    @Test
+    void luresWithDifferentColorOrSizeNeverMerge() {
+        var found = List.of(lure(9, "crankbait", "rare", "Bluegill", "1/4oz"),
+                lure(10, "crankbait", "rare", "Tiger Crawl", "1/4oz"),
+                lure(11, "crankbait", "rare", "Bluegill", "1/2oz"),
+                lure(12, "popper", "rare", "Bluegill", "1/4oz"));
+        assertTrue(plan(found, true, true, false).isEmpty());
+    }
+
+    @Test
+    void luresWithoutColorOrSizeNeverMerge() {
+        var found = List.of(new Entry(9, "lure", "crankbait", "rare"), new Entry(10, "lure", "crankbait", "rare"));
         assertTrue(plan(found, true, true, false).isEmpty());
     }
 
@@ -77,10 +96,18 @@ class SortPlannerTest {
     }
 
     @Test
-    void crossMergeSkipsLuresAndUnmatchedBaits() {
-        var chest = List.of(lure(3, "crankbait", "rare"));
-        var inv = List.of(lure(60, "crankbait", "rare"), bait(61, "worms", "common"));
+    void crossMergeSkipsUnmatchedBaitsAndLuresWithOtherColorOrSize() {
+        var chest = List.of(lure(3, "crankbait", "rare", "Bluegill", "1/4oz"));
+        var inv = List.of(lure(60, "crankbait", "rare", "Bluegill", "1/2oz"), bait(61, "worms", "common"));
         assertTrue(planCrossMerge(chest, inv).isEmpty());
+    }
+
+    @Test
+    void crossMergeMatchesLuresByNameColorAndSize() {
+        var chest = List.of(lure(3, "crankbait", "rare", "Tiger Crawl", "1/2oz"),
+                lure(4, "crankbait", "rare", "Bluegill", "1/4oz"));
+        var inv = List.of(lure(60, "crankbait", "rare", "Bluegill", "1/4oz"));
+        assertEquals(List.of(picks(4, 60), List.of(Click.shift(60))), planCrossMerge(chest, inv));
     }
 
     // ---- integration: replay the whole flow on a fake chest + inventory ----

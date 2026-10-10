@@ -17,7 +17,21 @@ public final class SortPlanner {
     private static final List<String> RARITY_ORDER = List.of("legendary", "epic", "rare", "common");
 
     /// One bait or lure in a slot. {@code slot} is the container slot id used in click packets.
-    public record Entry(int slot, String type, String name, String rarity) {}
+    /// {@code color} and {@code size} only matter for lures: two lures merge only when name, color and size all match.
+    public record Entry(int slot, String type, String name, String rarity, String color, String size) {
+        public Entry(int slot, String type, String name, String rarity) {
+            this(slot, type, name, rarity, "", "");
+        }
+
+        /// What must be equal for two entries to merge, or null when this entry never merges.
+        String mergeKey() {
+            if (BAIT.equals(type)) return name;
+            if (LURE.equals(type) && !color.isEmpty() && !size.isEmpty()) {
+                return name + "|" + color + "|" + size;
+            }
+            return null;
+        }
+    }
 
     /// A click on a slot: a plain pickup click, or a shift click (quick move).
     public record Click(int slot, boolean shift) {
@@ -52,19 +66,20 @@ public final class SortPlanner {
         List<Entry> entries = sortable(found);
         List<List<Click>> groups = new ArrayList<>();
 
-        // Merge baits with the same name into the lowest slot. Picking one up and clicking
-        // another bait adds their stock on the server. Lures never merge.
+        // Merge baits with the same name (lures: same name, color and size) into the lowest slot.
+        // Picking one up and clicking another adds their stock (uses for lures) on the server.
         Map<String, Entry> mergeTarget = new HashMap<>();
         List<Entry> kept = new ArrayList<>();
         List<Integer> freed = new ArrayList<>();
         for (Entry e : entries) {
-            if (!merge || !BAIT.equals(e.type())) {
+            String key = e.mergeKey();
+            if (!merge || key == null) {
                 kept.add(e);
                 continue;
             }
-            Entry target = mergeTarget.get(e.name());
+            Entry target = mergeTarget.get(key);
             if (target == null) {
-                mergeTarget.put(e.name(), e);
+                mergeTarget.put(key, e);
                 kept.add(e);
             } else {
                 groups.add(List.of(Click.pick(e.slot()), Click.pick(target.slot())));
@@ -114,18 +129,18 @@ public final class SortPlanner {
         return groups;
     }
 
-    /// For every bait in the inventory that has a same-name bait in the chest or vault: pick the
+    /// For every bait in the inventory that has a same-name bait (or same name, color and size lure) in the chest or vault: pick the
     /// chest bait up, click it onto the inventory bait (stock adds up there), then shift click the
     /// merged bait back into the chest. The merge and the shift click are separate groups so the
     /// server can answer in between. Chest baits never merge with each other.
     public static List<List<Click>> planCrossMerge(List<Entry> chest, List<Entry> inventory) {
         Map<String, Entry> inChest = new HashMap<>();
         for (Entry e : sortable(chest)) {
-            if (BAIT.equals(e.type())) inChest.putIfAbsent(e.name(), e);
+            if (e.mergeKey() != null) inChest.putIfAbsent(e.mergeKey(), e);
         }
         List<List<Click>> groups = new ArrayList<>();
         for (Entry inv : sortable(inventory)) {
-            Entry match = BAIT.equals(inv.type()) ? inChest.get(inv.name()) : null;
+            Entry match = inv.mergeKey() != null ? inChest.get(inv.mergeKey()) : null;
             if (match == null) continue;
             groups.add(List.of(Click.pick(match.slot()), Click.pick(inv.slot())));
             groups.add(List.of(Click.shift(inv.slot())));

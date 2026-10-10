@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * Merges identical baits and sorts baits and lures by rarity in the player inventory (and the open
+ * Merges identical baits and lures (same name, color and size) and sorts baits and lures by rarity in the player inventory (and the open
  * chest or vault). Click driven: one press queues the work, the clicks are then sent a few per tick
  * (see {@link BaitSorterConfig.BaitSorter#clickSpeed}). Only player inventory slots 0-35 are touched.
  */
@@ -125,7 +125,8 @@ public class BaitSorterHandler {
             }
             NbtCompound nbt = data.copyNbt();
             found.add(new SortPlanner.Entry(slot.id, nbt.getString("type").orElse(""),
-                    nbt.getString("name").orElse(""), nbt.getString("rarity").orElse("")));
+                    nbt.getString("name").orElse(""), nbt.getString("rarity").orElse(""),
+                    nbt.getString("color").orElse(""), nbt.getString("size").orElse("")));
         }
         return found;
     }
