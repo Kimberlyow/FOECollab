@@ -29,7 +29,7 @@ public class Defaults {
             "b5a9bbb7-42b4-4a6a-9ebe-bdf6697c8ee0",  new FoEDevType(Constant.ADMIRAL.TAG.getString() + " DannyPX", "DannyPX", false),
             "4c42b880-84df-4b0b-abd6-817997c16732",  new FoEDevType(Constant.CAPTAIN.TAG.getString() + " Krokodaxl", "Krokodaxl", false),
             "afbe233b-a6b3-4a3d-88bc-2dbf157a6cf3",  new FoEDevType(Constant.ADMIRAL.TAG.getString() + "  Kimberlyqt", "Kimberlyqt", true),
-            "4bb09b56-b73a-4dfe-b0ad-0bb4fe9621ed",  new FoEDevType(Constant.ADMIRAL.TAG.getString() + " landofif", "landofif", true)
+            "4bb09b56-b73a-4dfe-b0ad-0bb4fe9621ed",  new FoEDevType(Constant.ADMIRAL.TAG.getString() + " meowfih", "meowfih", true)
     );
 
     public static class FoEDevType {
