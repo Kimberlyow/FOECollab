@@ -25,11 +25,10 @@ public class KeybindHandler {
 			GLFW.GLFW_KEY_O, CATEGORY);
 	public final AdvancedKeyBinding openExtraInfoKeybind = new AdvancedKeyBinding("key.foecollab.openextrainfo",
 			GLFW.GLFW_KEY_Z, CATEGORY);
-	public final AdvancedKeyBinding baitSortingHelper = new AdvancedKeyBinding("key.foecollab.baitsortinghelper",
+	public final AdvancedKeyBinding sortBaits = new AdvancedKeyBinding("key.foecollab.baitsortinghelper",
 			GLFW.GLFW_KEY_B, CATEGORY);
 
 	public boolean showExtraInfo = false;
-	public boolean visualizeBaitSorting = false;
 
 	public static KeybindHandler instance() {
 		if (INSTANCE == null) {
@@ -42,7 +41,7 @@ public class KeybindHandler {
 		KeybindHandler.register(
 				this.openConfigKeybind,
 				this.openExtraInfoKeybind,
-				this.baitSortingHelper);
+				this.sortBaits);
 	}
 
 	public void tick(MinecraftClient minecraftClient) {
@@ -52,10 +51,6 @@ public class KeybindHandler {
 		if (minecraftClient.currentScreen != null) {
 			this.showExtraInfo = InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(),
 					((KeyBindingAccessor) openExtraInfoKeybind).getBoundKey().getCode());
-
-			// Only meaningful in keybind-hold mode; tracks whether the key is currently held.
-			this.visualizeBaitSorting = InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(),
-					((KeyBindingAccessor) baitSortingHelper).getBoundKey().getCode());
 		}
 	}
 

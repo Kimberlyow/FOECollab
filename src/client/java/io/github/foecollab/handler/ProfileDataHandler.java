@@ -418,9 +418,6 @@ public class ProfileDataHandler {
         // Locked Rolls Data
         public Map<Integer, List<String>> lockedArmorRolls = new HashMap<>();
 
-        // Bait Sorting Helper Toggle
-        public boolean baitSortingHelperToggle = false;
-
         // Stats Data
         public boolean isStatsInitialized = false;
 
@@ -466,7 +463,6 @@ public class ProfileDataHandler {
             friends = new ArrayList<>(prevData.friends);
             activeQuests = new HashMap<>(prevData.activeQuests);
             lockedArmorRolls = new HashMap<>(prevData.lockedArmorRolls);
-            baitSortingHelperToggle = prevData.baitSortingHelperToggle;
             isStatsInitialized = prevData.isStatsInitialized;
         }
 
@@ -511,8 +507,7 @@ public class ProfileDataHandler {
                     && this.crewMembers.equals(oldProfileData.crewMembers)
                     && this.isInCrewChat == oldProfileData.isInCrewChat
                     && this.friends.equals(oldProfileData.friends)
-                    && this.activeQuests.equals(oldProfileData.activeQuests)
-                    && this.baitSortingHelperToggle == oldProfileData.baitSortingHelperToggle;
+                    && this.activeQuests.equals(oldProfileData.activeQuests);
         }
     }
 }
