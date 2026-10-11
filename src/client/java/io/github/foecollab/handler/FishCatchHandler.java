@@ -243,7 +243,7 @@ public class FishCatchHandler {
 			ProfileDataHandler.instance().updateStatsOnCatch();
 			QuestHandler.instance().updateQuest(fish);
 			DailyQuestHandler.instance().updateQuest(DailyQuestHandler.ANYWHERE_GOAL);
-			DailyQuestHandler.instance().updateFishQuest(fish.fishId);
+			DailyQuestHandler.instance().updateQuest(stack.getName().getString());
 			if (fish.rarity == Constant.MYTHICAL) {
 				DailyQuestHandler.instance().updateQuest(DailyQuestHandler.MYTHICAL_GOAL);
 			}

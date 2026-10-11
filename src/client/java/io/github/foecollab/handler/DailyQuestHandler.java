@@ -154,20 +154,6 @@ public class DailyQuestHandler {
         return Integer.parseInt(count.replace(",", ""));
     }
 
-    /** Counts a catch towards the mission named after the fish ("atlantic_bluefin_tuna" is "Atlantic Bluefin Tuna"). */
-    public void updateFishQuest(String fishId) {
-        if (fishId == null || fishId.isBlank()) {
-            return;
-        }
-        StringBuilder name = new StringBuilder();
-        for (String word : fishId.split("_")) {
-            if (!word.isEmpty()) {
-                name.append(name.isEmpty() ? "" : " ").append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
-            }
-        }
-        updateQuest(name.toString());
-    }
-
     private static Optional<Quest> parseQuestLine(String loreLine, int slot) {
         if (!loreLine.contains("|") || !loreLine.contains("(") || !loreLine.contains(")")) {
             return Optional.empty();
