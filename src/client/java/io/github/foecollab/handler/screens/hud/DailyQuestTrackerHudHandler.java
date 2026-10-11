@@ -53,7 +53,12 @@ public class DailyQuestTrackerHudHandler {
             List<DailyQuestHandler.Quest> activeQuests = DailyQuestHandler.instance().quests;
 
             if(activeQuests != null) {
+                String[] lastSection = {""};
                 activeQuests.forEach(quest -> {
+                    if (!quest.section.isEmpty() && !quest.section.equals(lastSection[0])) {
+                        textList.add(Text.literal(quest.section).formatted(Formatting.GRAY));
+                        lastSection[0] = quest.section;
+                    }
                     if(quest.questDone()) {
                         textList.add(TextHelper.concat(
                                 Text.literal("#").formatted(Formatting.GRAY),
@@ -73,11 +78,11 @@ public class DailyQuestTrackerHudHandler {
                                 Text.literal("#").formatted(Formatting.GRAY),
                                 Text.literal(String.valueOf(quest.slot)).formatted(Formatting.GRAY),
                                 Text.literal(": ").formatted(Formatting.GRAY),
-                                Text.literal(quest.goal).formatted(Formatting.WHITE),
+                                Text.literal(quest.goal).formatted(Formatting.GREEN),
                                 Text.literal(" (").formatted(Formatting.GRAY),
                                 Text.literal(String.valueOf(quest.progress)).formatted(Formatting.YELLOW),
                                 Text.literal("/").formatted(Formatting.GRAY),
-                                Text.literal(String.valueOf(quest.needed)).formatted(Formatting.WHITE),
+                                Text.literal(String.valueOf(quest.needed)).withColor(0x7FB8FF),
                                 Text.literal(")").formatted(Formatting.GRAY)
                         ));
                     }
