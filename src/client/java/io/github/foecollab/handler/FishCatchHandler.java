@@ -242,9 +242,10 @@ public class FishCatchHandler {
 			ProfileDataHandler.instance().updateStatsOnCatch(fish);
 			ProfileDataHandler.instance().updateStatsOnCatch();
 			QuestHandler.instance().updateQuest(fish);
-			DailyQuestHandler.instance().updateQuest("Total Caught");
+			DailyQuestHandler.instance().updateQuest(DailyQuestHandler.ANYWHERE_GOAL);
+			DailyQuestHandler.instance().updateQuest(stack.getName().getString());
 			if (fish.rarity == Constant.MYTHICAL) {
-				DailyQuestHandler.instance().updateQuest("Mythical Caught");
+				DailyQuestHandler.instance().updateQuest(DailyQuestHandler.MYTHICAL_GOAL);
 			}
 			PetEquipHandler.instance().updatePet(minecraftClient.player);
 
