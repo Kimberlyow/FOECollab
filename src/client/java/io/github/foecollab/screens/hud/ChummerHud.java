@@ -69,7 +69,7 @@ public class ChummerHud {
         Text time = this.cachedTime;
         ItemStack icon = active.stack;
         boolean hasIcon = !icon.isEmpty();
-        boolean hasBar = !active.timerUnknown;
+        boolean hasBar = !active.timerUnknown && config.chummerTracker.showProgressBar;
 
         drawContext.getMatrices().pushMatrix();
         try {

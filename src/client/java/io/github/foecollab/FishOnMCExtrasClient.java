@@ -159,9 +159,6 @@ public class FishOnMCExtrasClient implements ClientModInitializer {
 
     private boolean allowGameMessage(Text text, boolean overlay) {
         if(LoadingHandler.instance().isOnServer) {
-            // Observes "... activated a ... Chummer" broadcasts; never suppresses the message.
-            ChummerHandler.instance().onReceiveMessage(text);
-
             if (PetEquipHandler.instance().onReceiveMessage(text) ||
                 ContestHandler.instance().onReceiveMessage(text) ||
                 CrewHandler.instance().onReceiveMessage(text) ||

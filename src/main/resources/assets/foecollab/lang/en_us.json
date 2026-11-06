@@ -347,8 +347,8 @@
 
   "text.autoconfig.foecollab.option.chummerTracker": "§f§lChummer Tracker Options",
   "text.autoconfig.foecollab.option.chummerTracker.showChummerHud": "Show chummer time HUD",
+  "text.autoconfig.foecollab.option.chummerTracker.showProgressBar": "Show progress bar",
   "text.autoconfig.foecollab.option.chummerTracker.solidRangeBar": "Replace range particles with a solid bar",
-  "text.autoconfig.foecollab.option.chummerTracker.rangeRadius": "Range radius (blocks)",
   "text.autoconfig.foecollab.option.chummerTracker.barColor": "Bar color",
   "text.autoconfig.foecollab.option.chummerTracker.alignment": "Alignment",
   "text.autoconfig.foecollab.option.chummerTracker.fontSize": "Font size",

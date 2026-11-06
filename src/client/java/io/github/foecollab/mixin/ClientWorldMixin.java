@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * Routes every spawned particle through chummer tracking: every public particle-spawn path on
  * ClientWorld funnels into this private addParticle. {@code ChummerHandler#observeParticle}
- * keeps tracked chummers alive and says whether to drop the particle because the solid range
- * ring replaces the server's circle.
+ * says whether to drop the particle because the solid range ring replaces the server's circle.
  */
 @Mixin(ClientWorld.class)
 public class ClientWorldMixin {
